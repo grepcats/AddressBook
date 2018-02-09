@@ -34,7 +34,6 @@ namespace AddressBook.Controllers
           Request.Form["zip"]
           );
           newContact.SetAddress(newAddress);
-          //Console.WriteLine("name is " + newContact.GetName() + "and street is " + newContact.GetAddress().GetStreet());
           List<Contact> allContacts = Contact.GetAll();
           return View("Index", allContacts);
         }
@@ -47,13 +46,10 @@ namespace AddressBook.Controllers
           return View("Index", allContacts);
         }
 
-
-
         [HttpGet("/{id}")]
         public ActionResult Details(int id)
         {
           Contact detailContact = Contact.Find(id);
-          //Console.WriteLine("name is " + detailContact.GetName() + " and ID is " + detailContact.GetId() + " and passed id is " + id);
           return View(detailContact);
         }
 
@@ -81,7 +77,6 @@ namespace AddressBook.Controllers
           updateContact.GetAddress().SetStreet(Request.Form["street"]);
           updateContact.GetAddress().SetCityState(Request.Form["city-state"]);
           updateContact.GetAddress().SetZip(Request.Form["zip"]);
-          // List<Contact> allContacts = Contact.GetAll();
 
           return View("Details", updateContact);
         }

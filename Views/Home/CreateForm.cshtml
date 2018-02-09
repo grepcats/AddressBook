@@ -3,30 +3,30 @@
 }
 
 <div class="jumbotron">
-  <h1>Address Form</h1>
+  <h1>Contact Form</h1>
   <p>Please enter your details here.</p>
 </div>
 <form method="post" action="/new">
   <div class-"form-group">
     <label for="name">What is your name?</label>
-    <input type="text" id="name" name="name" class="form-control">
+    <input type="text" id="name" name="name" class="form-control" pattern="[A-Za-z\-]+" required>
   </div>
   <div class-"form-group">
     <label for="phone-number">What is your phone number?</label>
-    <input type="text" id="phone-number" name="phone-number" class="form-control">
+    <input type="text" id="phone-number" name="phone-number" class="form-control" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="123-456-7890" required>
   </div>
   <h2>Address</h2>
   <div class-"form-group">
     <label for="street">Street?</label>
-    <input type="text" id="street" name="street" class="form-control">
+    <input type="text" id="street" name="street" class="form-control" required>
   </div>
   <div class-"form-group">
     <label for="city-state">City/State?</label>
-    <input type="text" id="city-state" name="city-state" class="form-control">
+    <input type="text" id="city-state" name="city-state" class="form-control" pattern="[A-Za-z\-]+[,][\s][A-Z]{2}" placeholder="City, ST" required>
   </div>
   <div class-"form-group">
     <label for="zip">Zip Code?</label>
-    <input type="text" id="zip" name="zip" class="form-control">
+    <input type="text" id="zip" name="zip" class="form-control" pattern="[0-9]{5}" placeholder="12345" required>
   </div>
   <button type="submit" class="btn btn-default">Add Contact</button>
 </form>

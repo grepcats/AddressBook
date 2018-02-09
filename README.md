@@ -35,13 +35,13 @@ Program should be styled
 Input: unstyled program
 Output: styled program
 
-Form Controls: Form should suggest format for phone number and throw error if wrong
-Form Controls: Form should only accept letters for name
-Form Controls: Form should only accept 7 characters for zip
-
 Program should allow updates to objects
 Input: select object and select "update"
 Output: updated values for object
+
+Form Controls: Form should suggest format for phone number and throw error if wrong
+Form Controls: Form should only accept letters for name
+Form Controls: Form should only accept 7 characters for zip
 
 Program should recognize duplicate entries & tell user to enter a unique entry
 

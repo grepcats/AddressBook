@@ -1,17 +1,24 @@
+body {
+  background-color: #7A9E9F;
+}
+
+.jumbotron {
+  background-color: #4F6367;
+  color: #fff;
+}
+
+.well {
+  padding: 13px;
+  margin-bottom: 10px;
+  background-color: #EEF5DB;
+  border: 1px solid #EEF5DB;
+}
+
 .display-name {
   font-size: 1.25em;
   font-weight: bold;
   display: block;
   margin-bottom: 10px;
-}
-
-.display-update {
-  display: inline;
-  font-weight: bold;
-}
-
-.delete-button {
-
 }
 
 .delete-all-button {
@@ -27,7 +34,6 @@ h2 {
   font-size: 1.5em;
   font-weight: bold;
   color: #4F6367;
-
 }
 
 a {
@@ -48,6 +54,10 @@ a:hover {
   margin-top: 30px;
 }
 
+.update-button {
+  margin-top: 30px;
+}
+
 .no-space {
   margin-bottom:0;
   margin-left: 10px;
@@ -61,23 +71,4 @@ label {
   color: #4F6367;
   margin-top: 10px;
   font-size: 1.25em;
-}
-
-
-
-
-body {
-  background-color: #7A9E9F;
-}
-
-.jumbotron {
-  background-color: #4F6367;
-  color: #fff;
-}
-
-.well {
-  padding: 13px;
-  margin-bottom: 10px;
-  background-color: #EEF5DB;
-  border: 1px solid #EEF5DB;
 }

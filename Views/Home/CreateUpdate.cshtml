@@ -3,7 +3,7 @@
 }
 
 <div class="jumbotron">
-  <h1>Update Address Form</h1>
+  <h1>Update Contact</h1>
   <p>Please update your details here.</p>
 </div>
 <form method="post" action="/update/@Model.GetId()">
@@ -13,7 +13,7 @@
   </div>
   <div class-"form-group">
     <label for="phone-number">What is your phone number?</label>
-    <input type="text" id="phone-number" name="phone-number" class="form-control" value="@Model.GetPhone()">
+    <input type="text" id="phone-number" name="phone-number" class="form-control" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="123-456-7890" value="@Model.GetPhone()">
   </div>
   <h2>Address</h2>
   <div class-"form-group">
@@ -22,11 +22,11 @@
   </div>
   <div class-"form-group">
     <label for="city-state">City/State?</label>
-    <input type="text" id="city-state" name="city-state" class="form-control" value="@Model.GetAddress().GetCityState()">
+    <input type="text" id="city-state" name="city-state" class="form-control" pattern="[A-Za-z\-]+[,][\s][A-Z]{2}" placeholder="City, ST" value="@Model.GetAddress().GetCityState()">
   </div>
   <div class-"form-group">
     <label for="zip">Zip Code?</label>
-    <input type="text" id="zip" name="zip" class="form-control" value="@Model.GetAddress().GetZip()">
+    <input type="text" id="zip" name="zip" class="form-control" pattern="[0-9]{5}" placeholder="12345" value="@Model.GetAddress().GetZip()">
   </div>
-  <button type="submit" class="btn btn-warning">Update</button>
+  <button type="submit" class="btn btn-warning update-button">Update</button>
 </form>
