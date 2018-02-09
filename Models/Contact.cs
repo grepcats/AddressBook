@@ -55,6 +55,15 @@ namespace AddressBook.Models
       return _id;
     }
 
+    public static void Delete(int id)
+    {
+      _instances.RemoveAt(id-1);
+      for (int i =0; i < _instances.Count; i++)
+      {
+        _instances[i]._id = i + 1;
+      }
+    }
+
     public static List<Contact> GetAll()
     {
       return _instances;

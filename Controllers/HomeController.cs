@@ -47,5 +47,13 @@ namespace AddressBook.Controllers
           //Console.WriteLine("name is " + detailContact.GetName() + " and ID is " + detailContact.GetId() + " and passed id is " + id);
           return View(detailContact);
         }
+
+        [HttpPost("/contacts/delete/{id}")]
+        public ActionResult DeleteOne(int id)
+        {
+          Contact.Delete(id);
+          List<Contact> allContacts = Contact.GetAll();
+          return View("Index", allContacts);
+        }
     }
 }

@@ -6,7 +6,10 @@
 @foreach (var contact in Model)
 {
   <ul class="list-unstyled">
-    <li class="display-name"><a href="/@contact.GetId()">@contact.GetName()</a></li>
+    <li class="display-name"><a href="/@contact.GetId()">@contact.GetName()</a>
+    <form method="post" action="/contacts/delete/@contact.GetId()">
+      <button type="submit" class="btn btn-xs">Delete?</button>
+    </form></li>
   </ul>
 }
 
