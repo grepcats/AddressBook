@@ -91,5 +91,29 @@ namespace AddressBook.Controllers
 
           return View("Details", updateContact);
         }
-    }
+
+        [HttpPost("/search")]
+        public ActionResult Search()
+        {
+           string searchTerm = Request.Form["search"];
+           List<Contact> allContacts = Contact.GetAll();
+           foreach (Contact contact in allContacts)
+           {
+             if (searchTerm == contact.GetName())
+             {
+               List<Contact> searchContact = new List<Contact>{};
+               searchContact.Add(contact);
+               return View("Index", searchContact);
+             }
+           }
+           return View("Index", allContacts);
+         }
+
+         [HttpGet("/clear")]
+         public ActionResult Clear()
+         {
+           List<Contact> allContacts = Contact.GetAll();
+           return View("Index", allContacts);
+         }
+       }
 }
