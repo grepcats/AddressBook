@@ -17,10 +17,10 @@
   <div class="well">
     <ul class="list-unstyled">
       <li><a href="/@contact.GetId()"><span class="display-name">@contact.GetName()</span></a>
-      <a href="/contacts/update/@contact.GetId()">Update?</a>
       <form method="post" action="/contacts/delete/@contact.GetId()">
-        <button type="submit" class="btn btn-warning btn-xs">Delete?</button>
+        <button type="submit" class="btn btn-warning btn-xs delete-button">Delete?</button>
       </form>
+      <span class="display-update"><a href="/contacts/update/@contact.GetId()">Update?</a></span>
 
     </ul>
   </div>
@@ -28,5 +28,5 @@
 
 <a href="/contacts/new" class="action">Add New Contact</a>
 <form method="post" action="/delete">
-  <button type="submit" class="btn btn-danger">Delete all?</button>
+  <button type="submit" class="btn btn-danger delete-all-button">Delete all?</button>
 </form>
