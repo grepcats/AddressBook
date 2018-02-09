@@ -106,7 +106,8 @@ namespace AddressBook.Controllers
                return View("Index", searchContact);
              }
            }
-           return View("Index", allContacts);
+           List<Contact> noContacts = new List<Contact>{};
+           return View("Index", noContacts);
          }
 
          [HttpGet("/clear")]
