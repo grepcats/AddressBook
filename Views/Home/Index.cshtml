@@ -1,19 +1,30 @@
 @{
   Layout = "_Layout";
 }
+<div class="jumbotron">
+  <h1>Address Book</h1>
+  <p>Current Contacts</p>
+</div>
 
-<h1>Current Contacts!</h1>
+@if (Model.Count == 0)
+{
+  <div class="well">
+    <h2>You currently have no contacts! Please enter one below.</h2>
+  </div>
+}
 @foreach (var contact in Model)
 {
-  <ul class="list-unstyled">
-    <li class="display-name"><a href="/@contact.GetId()">@contact.GetName()</a>
-    <form method="post" action="/contacts/delete/@contact.GetId()">
-      <button type="submit" class="btn btn-warning btn-xs">Delete?</button>
-    </form></li>
-  </ul>
+  <div class="well">
+    <ul class="list-unstyled">
+      <li class="display-name"><a href="/@contact.GetId()">@contact.GetName()</a>
+      <form method="post" action="/contacts/delete/@contact.GetId()">
+        <button type="submit" class="btn btn-warning btn-xs">Delete?</button>
+      </form></li>
+    </ul>
+  </div>
 }
 
-<a href="/contacts/new">Add New Contact?</a>
+<a href="/contacts/new" class="action">Add New Contact</a>
 <form method="post" action="/delete">
   <button type="submit" class="btn btn-danger">Delete all?</button>
 </form>

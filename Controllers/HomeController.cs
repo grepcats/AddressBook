@@ -34,7 +34,7 @@ namespace AddressBook.Controllers
           Request.Form["zip"]
           );
           newContact.SetAddress(newAddress);
-          Console.WriteLine("name is " + newContact.GetName() + "and street is " + newContact.GetAddress().GetStreet());
+          //Console.WriteLine("name is " + newContact.GetName() + "and street is " + newContact.GetAddress().GetStreet());
           List<Contact> allContacts = Contact.GetAll();
           return View("Index", allContacts);
         }

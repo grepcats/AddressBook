@@ -1,11 +1,14 @@
 @{
   Layout = "_Layout";
 }
-
-<h1>@Model.GetName()</h1>
-<p>Phone number: @Model.GetPhone()</p>
-<h2>Address</h2>
-<p>@Model.GetAddress().GetStreet()</p>
-<p>@Model.GetAddress().GetCityState(), @Model.GetAddress().GetZip()</p>
-
-<a href="/">Return Home</a>
+<div class="jumbotron">
+  <h1>@Model.GetName()</h1>
+</div>
+<div class="well">
+  <h2 id="phone-header">Phone number</h2>
+  <p class="no-space">@Model.GetPhone()</p>
+  <h2>Address</h2>
+  <p class="no-space">@Model.GetAddress().GetStreet()</p>
+  <p class="no-space">@Model.GetAddress().GetCityState(), @Model.GetAddress().GetZip()</p>
+</div>
+<a href="/" class="action">Return Home</a>

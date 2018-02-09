@@ -3,6 +3,65 @@
   font-weight: bold;
 }
 
+
 h2 {
   font-size: 1.5em;
+  font-weight: bold;
+  color: #4F6367;
+}
+
+a {
+  color: #FE5F55;
+}
+
+a:hover {
+  color: #4F6367;
+}
+
+.action {
+  color: #4F6367;
+  font-size: 1.25em;
+  font-weight: bold;
+}
+
+.btn-danger {
+  margin-top: 50px;
+}
+
+.btn-default {
+  margin-top: 30px;
+}
+
+.no-space {
+  margin-bottom:0;
+  margin-left: 10px;
+}
+
+#phone-header {
+  margin-top: 10px;
+}
+
+label {
+  color: #4F6367;
+  margin-top: 10px;
+  font-size: 1.25em;
+}
+
+
+
+
+body {
+  background-color: #7A9E9F;
+}
+
+.jumbotron {
+  background-color: #4F6367;
+  color: #fff;
+}
+
+.well {
+  padding: 13px;
+  margin-bottom: 10px;
+  background-color: #EEF5DB;
+  border: 1px solid #EEF5DB;
 }
