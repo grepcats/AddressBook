@@ -13,5 +13,23 @@ namespace AddressBook.Controllers
             List<Contact> allContacts = Contact.GetAll();
             return View(allContacts);
         }
+
+        [HttpGet("/contacts/new")]
+        public ActionResult CreateForm()
+        {
+          return View();
+        }
+
+        [HttpPost("/new")]
+        public ActionResult Create()
+        {
+          Contact newContact = new Contact(
+            Request.Form["name"],
+            Request.Form["phone-number"],
+            Request.Form["address"]
+          );
+          List<Contact> allContacts = Contact.GetAll();
+          return View("Index", allContacts);
+        }
     }
 }

@@ -5,9 +5,11 @@
 <h1>Current Contacts!</h1>
 @foreach (var contact in Model)
 {
-  <ul>
-    <li>contact.GetName()</li>
-    <li>contact.GetPhone()</li>
-    <li>contact.GetAddress()</li>
+  <ul class="list-unstyled">
+    <li class="display-name">@contact.GetName()</li>
+    <li>@contact.GetPhone()</li>
+    <li>@contact.GetAddress()</li>
   </ul>
 }
+
+<a href="/contacts/new">Add New Contact?</a>
