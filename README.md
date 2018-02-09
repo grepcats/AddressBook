@@ -19,6 +19,21 @@ Program should allow users to clear all Contacts
 Input: button that says "clear all"
 Output: Contact list is cleared
 
+Program should display details for a particular contact
+Input: select contact name and provide ID
+Output: Details view with more information about the contact
+
+Program should allow removal of individual contacts
+Input: select "delete contact"
+Output: new list of contacts with deleted contact removed
+
+Program should store the address in its own object, which should be stored in Contact
+Input: street, city/state, zip
+Output: address with more controlled fields
+
+Program should be styled
+Input: unstyled program
+Output: styled program
 
 
 

@@ -6,9 +6,7 @@
 @foreach (var contact in Model)
 {
   <ul class="list-unstyled">
-    <li class="display-name">@contact.GetName()</li>
-    <li>@contact.GetPhone()</li>
-    <li>@contact.GetAddress()</li>
+    <li class="display-name"><a href="/@contact.GetId()">@contact.GetName()</a></li>
   </ul>
 }
 
