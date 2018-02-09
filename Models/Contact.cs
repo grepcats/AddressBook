@@ -49,5 +49,11 @@ namespace AddressBook.Models
     {
       _address = address;
     }
+
+    public static List<Contact> GetAll()
+    {
+      return _instances;
+    }
+
   }
 }

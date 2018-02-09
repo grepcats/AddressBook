@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System;
 using Microsoft.AspNetCore.Mvc;
-//using AddressBook.Models;
+using AddressBook.Models;
 
 namespace AddressBook.Controllers
 {
@@ -10,7 +10,8 @@ namespace AddressBook.Controllers
         [HttpGet("/")]
         public ActionResult Index()
         {
-            return View();
+            List<Contact> allContacts = Contact.GetAll();
+            return View(allContacts);
         }
     }
 }

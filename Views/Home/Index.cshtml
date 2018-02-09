@@ -2,4 +2,12 @@
   Layout = "_Layout";
 }
 
-<h1>Hello!</h1>
+<h1>Current Contacts!</h1>
+@foreach (var contact in Model)
+{
+  <ul>
+    <li>contact.GetName()</li>
+    <li>contact.GetPhone()</li>
+    <li>contact.GetAddress()</li>
+  </ul>
+}
