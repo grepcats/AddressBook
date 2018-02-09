@@ -35,6 +35,9 @@ Program should be styled
 Input: unstyled program
 Output: styled program
 
+Program should allow updates to objects
+Input: select object and select "update"
+Output: updated values for object
 
 
 

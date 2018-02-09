@@ -25,9 +25,16 @@ namespace AddressBook.Controllers
         {
           Contact newContact = new Contact(
             Request.Form["name"],
-            Request.Form["phone-number"],
-            Request.Form["address"]
+            Request.Form["phone-number"]
           );
+
+          Address newAddress = new Address(
+          Request.Form["street"],
+          Request.Form["city-state"],
+          Request.Form["zip"]
+          );
+          newContact.SetAddress(newAddress);
+          Console.WriteLine("name is " + newContact.GetName() + "and street is " + newContact.GetAddress().GetStreet());
           List<Contact> allContacts = Contact.GetAll();
           return View("Index", allContacts);
         }

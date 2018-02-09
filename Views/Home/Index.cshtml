@@ -8,12 +8,12 @@
   <ul class="list-unstyled">
     <li class="display-name"><a href="/@contact.GetId()">@contact.GetName()</a>
     <form method="post" action="/contacts/delete/@contact.GetId()">
-      <button type="submit" class="btn btn-xs">Delete?</button>
+      <button type="submit" class="btn btn-warning btn-xs">Delete?</button>
     </form></li>
   </ul>
 }
 
 <a href="/contacts/new">Add New Contact?</a>
 <form method="post" action="/delete">
-  <button type="submit" class="btn btn-default">Delete all?</button>
+  <button type="submit" class="btn btn-danger">Delete all?</button>
 </form>

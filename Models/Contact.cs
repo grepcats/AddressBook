@@ -7,17 +7,16 @@ namespace AddressBook.Models
     private string _name;
     private int _id;
     private string _phoneNumber;
-    private string _address;
+    private Address _address;
 
     private static List<Contact> _instances = new List<Contact>{};
 
-    public Contact(string name, string phone, string address)
+    public Contact(string name, string phone)
     {
       _name = name;
       _instances.Add(this);
       _id = _instances.Count;
       _phoneNumber = phone;
-      _address = address;
     }
 
     public string GetName()
@@ -40,12 +39,12 @@ namespace AddressBook.Models
       _phoneNumber = phone;
     }
 
-    public string GetAddress()
+    public Address GetAddress()
     {
       return _address;
     }
 
-    public void SetAddress(string address)
+    public void SetAddress(Address address)
     {
       _address = address;
     }

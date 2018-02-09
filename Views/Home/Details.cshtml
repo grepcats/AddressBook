@@ -3,7 +3,9 @@
 }
 
 <h1>@Model.GetName()</h1>
-<p>@Model.GetPhone()</p>
-<p>@Model.GetAddress()</p>
+<p>Phone number: @Model.GetPhone()</p>
+<h2>Address</h2>
+<p>@Model.GetAddress().GetStreet()</p>
+<p>@Model.GetAddress().GetCityState(), @Model.GetAddress().GetZip()</p>
 
 <a href="/">Return Home</a>
