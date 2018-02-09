@@ -5,6 +5,7 @@ body {
 .jumbotron {
   background-color: #4F6367;
   color: #fff;
+  text-align: center;
 }
 
 .well {

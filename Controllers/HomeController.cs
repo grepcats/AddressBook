@@ -23,8 +23,18 @@ namespace AddressBook.Controllers
         [HttpPost("/new")]
         public ActionResult Create()
         {
+          List<Contact> preContacts = Contact.GetAll();
+          string userName = Request.Form["name"];
+          foreach (Contact contact in preContacts)
+          {
+            if (userName == contact.GetName())
+            {
+              return View("AddFailed");
+            }
+          }
+
           Contact newContact = new Contact(
-            Request.Form["name"],
+            userName,
             Request.Form["phone-number"]
           );
 
@@ -34,6 +44,7 @@ namespace AddressBook.Controllers
           Request.Form["zip"]
           );
           newContact.SetAddress(newAddress);
+
           List<Contact> allContacts = Contact.GetAll();
           return View("Index", allContacts);
         }

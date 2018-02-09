@@ -39,18 +39,15 @@ Program should allow updates to objects
 Input: select object and select "update"
 Output: updated values for object
 
-Form Controls: Form should suggest format for phone number and throw error if wrong
-Form Controls: Form should only accept letters for name
-Form Controls: Form should only accept 7 characters for zip
+Form Controls:
+Form should suggest format for phone number and throw error if wrong (123-456-7890)
+Form should only accept letters for name
+Form should only accept 5 characters for zip (12345)
 
 Program should recognize duplicate entries & tell user to enter a unique entry
+Input: duplicate name
+Output: "sorry, that person is already in the system."
 
-//
-
-
-Extra
-Allow users to click a Contact's name to view Details
-Add ability to delete individiaul Contacts
-Daddress propery should be its own class with properties (street address, city, state)
-CSS and JS
-Search functinoality
+Program should allow user to search for Contacts (v1 - name must be exact)
+Input: contact name
+Output: details for that contact or "no match found"
