@@ -47,6 +47,8 @@ namespace AddressBook.Controllers
           return View("Index", allContacts);
         }
 
+
+
         [HttpGet("/{id}")]
         public ActionResult Details(int id)
         {
@@ -61,6 +63,27 @@ namespace AddressBook.Controllers
           Contact.Delete(id);
           List<Contact> allContacts = Contact.GetAll();
           return View("Index", allContacts);
+        }
+
+        [HttpGet("/contacts/update/{id}")]
+        public ActionResult CreateUpdate(int id)
+        {
+          Contact updateContact = Contact.Find(id);
+          return View(updateContact);
+        }
+
+        [HttpPost("/update/{id}")]
+        public ActionResult UpdateOne(int id)
+        {
+          Contact updateContact = Contact.Find(id);
+          updateContact.SetName(Request.Form["name"]);
+          updateContact.SetPhone(Request.Form["phone-number"]);
+          updateContact.GetAddress().SetStreet(Request.Form["street"]);
+          updateContact.GetAddress().SetCityState(Request.Form["city-state"]);
+          updateContact.GetAddress().SetZip(Request.Form["zip"]);
+          // List<Contact> allContacts = Contact.GetAll();
+
+          return View("Details", updateContact);
         }
     }
 }
