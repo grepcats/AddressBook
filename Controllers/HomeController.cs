@@ -17,105 +17,105 @@ namespace AddressBook.Controllers
         [HttpGet("/contacts/new")]
         public ActionResult CreateForm()
         {
-          return View();
+            return View();
         }
 
         [HttpPost("/new")]
         public ActionResult Create()
         {
-          List<Contact> preContacts = Contact.GetAll();
-          string userName = Request.Form["name"];
-          foreach (Contact contact in preContacts)
-          {
-            if (userName == contact.GetName())
+            List<Contact> preContacts = Contact.GetAll();
+            string userName = Request.Form["name"];
+            foreach (Contact contact in preContacts)
             {
-              return View("AddFailed");
+                if (userName == contact.GetName())
+                {
+                    return View("AddFailed");
+                }
             }
-          }
 
-          Contact newContact = new Contact(
+            Contact newContact = new Contact(
             userName,
             Request.Form["phone-number"]
-          );
+            );
 
-          Address newAddress = new Address(
-          Request.Form["street"],
-          Request.Form["city-state"],
-          Request.Form["zip"]
-          );
-          newContact.SetAddress(newAddress);
+            Address newAddress = new Address(
+            Request.Form["street"],
+            Request.Form["city-state"],
+            Request.Form["zip"]
+            );
 
-          List<Contact> allContacts = Contact.GetAll();
-          return View("Index", allContacts);
+            newContact.SetAddress(newAddress);
+
+            List<Contact> allContacts = Contact.GetAll();
+            return View("Index", allContacts);
         }
 
         [HttpPost("/delete")]
         public ActionResult DeleteAll()
         {
-          Contact.ClearAll();
-          List<Contact> allContacts = Contact.GetAll();
-          return View("Index", allContacts);
+            Contact.ClearAll();
+            List<Contact> allContacts = Contact.GetAll();
+            return View("Index", allContacts);
         }
 
         [HttpGet("/{id}")]
         public ActionResult Details(int id)
         {
-          Contact detailContact = Contact.Find(id);
-          return View(detailContact);
+            Contact detailContact = Contact.Find(id);
+            return View(detailContact);
         }
 
         [HttpPost("/contacts/delete/{id}")]
         public ActionResult DeleteOne(int id)
         {
-          Contact.Delete(id);
-          List<Contact> allContacts = Contact.GetAll();
-          return View("Index", allContacts);
+            Contact.Delete(id);
+            List<Contact> allContacts = Contact.GetAll();
+            return View("Index", allContacts);
         }
 
         [HttpGet("/contacts/update/{id}")]
         public ActionResult CreateUpdate(int id)
         {
-          Contact updateContact = Contact.Find(id);
-          return View(updateContact);
+            Contact updateContact = Contact.Find(id);
+            return View(updateContact);
         }
 
         [HttpPost("/update/{id}")]
         public ActionResult UpdateOne(int id)
         {
-          Contact updateContact = Contact.Find(id);
-          updateContact.SetName(Request.Form["name"]);
-          updateContact.SetSearchName();
-          updateContact.SetPhone(Request.Form["phone-number"]);
-          updateContact.GetAddress().SetStreet(Request.Form["street"]);
-          updateContact.GetAddress().SetCityState(Request.Form["city-state"]);
-          updateContact.GetAddress().SetZip(Request.Form["zip"]);
+            Contact updateContact = Contact.Find(id);
+            updateContact.SetName(Request.Form["name"]);
+            updateContact.SetSearchName();
+            updateContact.SetPhone(Request.Form["phone-number"]);
+            updateContact.GetAddress().SetStreet(Request.Form["street"]);
+            updateContact.GetAddress().SetCityState(Request.Form["city-state"]);
+            updateContact.GetAddress().SetZip(Request.Form["zip"]);
 
-          return View("Details", updateContact);
+            return View("Details", updateContact);
         }
 
         [HttpPost("/search")]
         public ActionResult Search()
         {
-           string searchTerm = Request.Form["search"];
-           searchTerm = searchTerm.ToLower();
-           List<Contact> allContacts = Contact.GetAll();
-           List<Contact> searchContacts = new List<Contact>{};
-           foreach (Contact contact in allContacts)
-           {
-             if (contact.GetSearchName().Contains(searchTerm))
+             string searchTerm = Request.Form["search"];
+             searchTerm = searchTerm.ToLower();
+             List<Contact> allContacts = Contact.GetAll();
+             List<Contact> searchContacts = new List<Contact>{};
+             foreach (Contact contact in allContacts)
              {
-               searchContacts.Add(contact);
+               if (contact.GetSearchName().Contains(searchTerm))
+               {
+                 searchContacts.Add(contact);
+               }
              }
-           }
-           //List<Contact> noContacts = new List<Contact>{};
-           return View("Index", searchContacts);
+             return View("Index", searchContacts);
          }
 
          [HttpGet("/clear")]
          public ActionResult Clear()
          {
-           List<Contact> allContacts = Contact.GetAll();
-           return View("Index", allContacts);
+             List<Contact> allContacts = Contact.GetAll();
+             return View("Index", allContacts);
          }
-       }
+     }
 }
