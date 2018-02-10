@@ -1,3 +1,12 @@
+# Address Book
+
+#### _An app to store your contacts, 2/9/2018_
+
+#### By **Kayla Ondracek**
+
+## Description
+This is a C#/ASP.NET app that can be used to store contact/address info locally as long as it is running. No database backend yet. Users may also search for, delete, and update contacts.
+
 ## Specs
 Program should store a contact with name, phone number, and address
 Input: name, phone number, address
@@ -41,7 +50,8 @@ Output: updated values for object
 
 Form Controls:
 Form should suggest format for phone number and throw error if wrong (123-456-7890)
-Form should only accept letters for name
+Form should only accept letters, -, and ' for name
+Form should only accept city, ST format for City/State (city, ST)
 Form should only accept 5 characters for zip (12345)
 
 Program should recognize duplicate entries & tell user to enter a unique entry
@@ -51,3 +61,29 @@ Output: "sorry, that person is already in the system."
 Program should allow user to search for Contacts (v1 - name must be exact)
 Input: contact name
 Output: details for that contact or "no match found"
+
+Program should allow user more flexibilit in searching for Contacts (v2 - case insensitive, partial words accepted)
+Input: coNtaCt Na
+Output: Contact name
+
+## Setup/Installation Instructions
+In terminal,
+* git clone https://github.com/grepcats/AddressBook to Desktop
+* run "dotnet restore" in project folder
+* run "dotnet build"
+* run "dotnet run"
+* open web browser and navigate to http://localhost:5000
+
+Program will run as long as it is running in the terminal.
+
+## Known Bugs
+No known bugs at this time. Please report any bugs by opening a github issue.
+
+## Support and Contact Details
+If there are any issues or questions, please contact me at kayla.renee at gmail dot com or create an issue in GitHub.
+
+## Technologies Used
+C#/ASP.NET Core
+
+## License
+Copyright (c) 2018 **Kayla Ondracek**
