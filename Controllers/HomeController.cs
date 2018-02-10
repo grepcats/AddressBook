@@ -84,6 +84,7 @@ namespace AddressBook.Controllers
         {
           Contact updateContact = Contact.Find(id);
           updateContact.SetName(Request.Form["name"]);
+          updateContact.SetSearchName();
           updateContact.SetPhone(Request.Form["phone-number"]);
           updateContact.GetAddress().SetStreet(Request.Form["street"]);
           updateContact.GetAddress().SetCityState(Request.Form["city-state"]);
@@ -96,18 +97,18 @@ namespace AddressBook.Controllers
         public ActionResult Search()
         {
            string searchTerm = Request.Form["search"];
+           searchTerm = searchTerm.ToLower();
            List<Contact> allContacts = Contact.GetAll();
+           List<Contact> searchContacts = new List<Contact>{};
            foreach (Contact contact in allContacts)
            {
-             if (searchTerm == contact.GetName())
+             if (contact.GetSearchName().Contains(searchTerm))
              {
-               List<Contact> searchContact = new List<Contact>{};
-               searchContact.Add(contact);
-               return View("Index", searchContact);
+               searchContacts.Add(contact);
              }
            }
-           List<Contact> noContacts = new List<Contact>{};
-           return View("Index", noContacts);
+           //List<Contact> noContacts = new List<Contact>{};
+           return View("Index", searchContacts);
          }
 
          [HttpGet("/clear")]

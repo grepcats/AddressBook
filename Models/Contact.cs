@@ -5,6 +5,7 @@ namespace AddressBook.Models
   public class Contact
   {
     private string _name;
+    private string _searchName;
     private int _id;
     private string _phoneNumber;
     private Address _address;
@@ -14,6 +15,7 @@ namespace AddressBook.Models
     public Contact(string name, string phone)
     {
       _name = name;
+      _searchName = _name.ToLower();
       _instances.Add(this);
       _id = _instances.Count;
       _phoneNumber = phone;
@@ -27,6 +29,16 @@ namespace AddressBook.Models
     public void SetName(string name)
     {
       _name = name;
+    }
+
+    public string GetSearchName()
+    {
+      return _searchName;
+    }
+
+    public void SetSearchName()
+    {
+      _searchName = _name.ToLower();
     }
 
     public string GetPhone()
