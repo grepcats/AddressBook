@@ -9,7 +9,7 @@
   <p class="no-space">@Model.GetPhone()</p>
   <h2>Address</h2>
   <p class="no-space">@Model.GetAddress().GetStreet()</p>
-  <p class="no-space">@Model.GetAddress().GetCityState(), @Model.GetAddress().GetZip()</p>
+  <p class="no-space">@Model.GetAddress().GetCityState() @Model.GetAddress().GetZip()</p>
 </div>
 <p class="no-space"><a href="/contacts/update/@Model.GetId()"class="action">Update</a></p>
 <p class="no-space"><a href="/" class="action">Return Home</a></p>

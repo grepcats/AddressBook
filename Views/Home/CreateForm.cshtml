@@ -9,7 +9,7 @@
 <form method="post" action="/new">
   <div class-"form-group">
     <label for="name">Name</label>
-    <input type="text" id="name" name="name" class="form-control" pattern="[A-Za-z\- ]+" required>
+    <input type="text" id="name" name="name" class="form-control" pattern="[A-Za-z\- ']+" required>
   </div>
   <div class-"form-group">
     <label for="phone-number">Phone Number</label>
@@ -22,7 +22,7 @@
   </div>
   <div class-"form-group">
     <label for="city-state">City/State</label>
-    <input type="text" id="city-state" name="city-state" class="form-control" pattern="[A-Za-z\-]+[,][\s][A-Z]{2}" placeholder="City, ST" required>
+    <input type="text" id="city-state" name="city-state" class="form-control" pattern="[A-Za-z\- ']+[,][\s][A-Z]{2}" placeholder="City, ST" required>
   </div>
   <div class-"form-group">
     <label for="zip">Zip Code</label>
@@ -30,3 +30,4 @@
   </div>
   <button type="submit" class="btn btn-default add-button">Add Contact</button>
 </form>
+<p><a href="/" class="action">Return Home</a></p>
